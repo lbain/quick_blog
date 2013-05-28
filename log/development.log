@@ -1,0 +1,1974 @@
+Connecting to database specified by database.yml
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2013-05-27 20:07:25 +1000
+Served asset /rails.png - 200 OK (7ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/posts" for 127.0.0.1 at 2013-05-27 20:08:15 +1000
+Processing by PostsController#index as HTML
+Completed 500 Internal Server Error in 30ms
+
+ActiveRecord::StatementInvalid (Could not find table 'posts'):
+  app/controllers/posts_controller.rb:5:in `index'
+
+
+  Rendered /Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.6ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.6ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.3ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (1.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (1.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreatePosts (20130527100802)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130527100802')[0m
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+
+
+Started GET "/posts" for 127.0.0.1 at 2013-05-27 20:08:27 +1000
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" [0m
+  Rendered posts/index.html.erb within layouts/application (0.8ms)
+Compiled posts.css  (22ms)  (pid 12002)
+Compiled scaffolds.css  (10ms)  (pid 12002)
+Compiled application.css  (47ms)  (pid 12002)
+Compiled jquery.js  (1ms)  (pid 12002)
+Compiled jquery_ujs.js  (0ms)  (pid 12002)
+Compiled posts.js  (129ms)  (pid 12002)
+Compiled application.js  (178ms)  (pid 12002)
+Completed 200 OK in 307ms (Views: 305.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-27 20:08:27 +1000
+Served asset /application.css - 200 OK (7ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2013-05-27 20:08:27 +1000
+Served asset /posts.css - 200 OK (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-27 20:08:27 +1000
+Served asset /scaffolds.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-27 20:08:27 +1000
+Served asset /jquery_ujs.js - 200 OK (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-27 20:08:27 +1000
+Served asset /jquery.js - 200 OK (2ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-05-27 20:08:27 +1000
+Served asset /posts.js - 200 OK (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-27 20:08:27 +1000
+Served asset /application.js - 200 OK (4ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2013-05-27 20:08:29 +1000
+Processing by PostsController#new as HTML
+  Rendered posts/_form.html.erb (6.9ms)
+  Rendered posts/new.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 47ms (Views: 42.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2013-05-27 20:08:37 +1000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wEpo/FKB/iuODypPdN8WLfWV0C0Vbfefs15krAq5Yg4=", "post"=>{"title"=>"first post", "body"=>"is totally awesome!!"}, "commit"=>"Create Post"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (4.8ms)[0m  [1mINSERT INTO "posts" ("body", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "is totally awesome!!"], ["created_at", Mon, 27 May 2013 10:08:37 UTC +00:00], ["title", "first post"], ["updated_at", Mon, 27 May 2013 10:08:37 UTC +00:00]]
+  [1m[35m (2.5ms)[0m  commit transaction
+Redirected to http://127.0.0.1:3000/posts/1
+Completed 302 Found in 12ms (ActiveRecord: 7.5ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2013-05-27 20:08:37 +1000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered posts/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 19ms (Views: 17.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2013-05-27 20:08:37 +1000
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-05-27 20:08:37 +1000
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-27 20:08:37 +1000
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2013-05-27 20:09:54 +1000
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered posts/_form.html.erb (2.4ms)
+  Rendered posts/edit.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 43ms (Views: 19.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2013-05-27 20:09:54 +1000
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered posts/_form.html.erb (1.5ms)
+  Rendered posts/edit.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 19ms (Views: 17.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-27 20:09:54 +1000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-27 20:09:54 +1000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2013-05-27 20:09:54 +1000
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-27 20:09:54 +1000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-27 20:09:54 +1000
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-05-27 20:09:54 +1000
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-27 20:09:54 +1000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started PUT "/posts/1" for 127.0.0.1 at 2013-05-27 20:09:57 +1000
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wEpo/FKB/iuODypPdN8WLfWV0C0Vbfefs15krAq5Yg4=", "post"=>{"title"=>"", "body"=>"is totally awesome!!"}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered posts/_form.html.erb (2.7ms)
+  Rendered posts/edit.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 41ms (Views: 38.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-27 20:09:57 +1000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-27 20:09:57 +1000
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-27 20:09:57 +1000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2013-05-27 20:09:57 +1000
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-27 20:09:57 +1000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-05-27 20:09:57 +1000
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-27 20:09:57 +1000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started PUT "/posts/1" for 127.0.0.1 at 2013-05-27 20:10:02 +1000
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wEpo/FKB/iuODypPdN8WLfWV0C0Vbfefs15krAq5Yg4=", "post"=>{"title"=>"first post", "body"=>"is totally awesome!!"}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/posts/1
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2013-05-27 20:10:02 +1000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered posts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-27 20:10:03 +1000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-27 20:10:03 +1000
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-27 20:10:03 +1000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2013-05-27 20:10:03 +1000
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-27 20:10:03 +1000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-05-27 20:10:03 +1000
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-27 20:10:03 +1000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2013-05-27 20:12:20 +1000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", "1"]]
+ERROR: compiling _app_views_posts_show_html_erb__4048551298439076638_70232567413900 RAISED /Users/Lucy/Documents/code/quick_blog/app/views/posts/show.html.erb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+...( link_to 'Edit' edit_post_path(@post) );@output_buffer.safe...
+...                               ^
+Function body:           def _app_views_posts_show_html_erb__4048551298439076638_70232567413900(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "posts/show";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.safe_concat('<p id="notice">');@output_buffer.append= ( notice );@output_buffer.safe_concat('</p>
+
+<h2>
+  ');@output_buffer.append= ( link_to_unless_current @post.title, @post );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</h2>
+
+');@output_buffer.append= ( link_to 'Edit' edit_post_path(@post) );@output_buffer.safe_concat(' | ');@output_buffer.append= ( link_to 'Back', posts_path );@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: /Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_view/template.rb:297:in `module_eval'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_view/template.rb:297:in `compile'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_view/template.rb:244:in `block in compile!'
+<internal:prelude>:10:in `synchronize'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_view/template.rb:232:in `compile!'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_view/template.rb:144:in `block in render'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/activesupport-3.2.13/lib/active_support/notifications.rb:125:in `instrument'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_view/template.rb:143:in `render'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/activesupport-3.2.13/lib/active_support/notifications.rb:123:in `block in instrument'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/activesupport-3.2.13/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/activesupport-3.2.13/lib/active_support/notifications.rb:123:in `instrument'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_view/renderer/template_renderer.rb:18:in `render'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_view/renderer/renderer.rb:17:in `render'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/abstract_controller/rendering.rb:110:in `_render_template'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/abstract_controller/rendering.rb:88:in `render'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_controller/metal/rendering.rb:16:in `render'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/activesupport-3.2.13/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/Users/Lucy/.rvm/rubies/ruby-1.9.3-p429/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/activesupport-3.2.13/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/activerecord-3.2.13/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_controller/metal/mime_responds.rb:196:in `respond_to'
+/Users/Lucy/Documents/code/quick_blog/app/controllers/posts_controller.rb:18:in `show'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/abstract_controller/base.rb:167:in `process_action'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:414:in `_run__3704476652401427931__process_action__3755172122855548962__callbacks'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:405:in `__run_callback'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_controller/metal/rescue.rb:29:in `process_action'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/activesupport-3.2.13/lib/active_support/notifications.rb:123:in `block in instrument'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/activesupport-3.2.13/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/activesupport-3.2.13/lib/active_support/notifications.rb:123:in `instrument'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/activerecord-3.2.13/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/abstract_controller/base.rb:121:in `process'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/abstract_controller/rendering.rb:45:in `process'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_controller/metal.rb:203:in `dispatch'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_controller/metal.rb:246:in `block in action'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_dispatch/routing/route_set.rb:73:in `call'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_dispatch/routing/route_set.rb:36:in `call'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/journey-1.0.4/lib/journey/router.rb:56:in `each'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/journey-1.0.4/lib/journey/router.rb:56:in `call'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_dispatch/routing/route_set.rb:612:in `call'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/rack-1.4.5/lib/rack/etag.rb:23:in `call'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/rack-1.4.5/lib/rack/conditionalget.rb:25:in `call'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_dispatch/middleware/flash.rb:242:in `call'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:210:in `context'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:205:in `call'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/activerecord-3.2.13/lib/active_record/query_cache.rb:64:in `call'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/activerecord-3.2.13/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:405:in `_run__2231221439759104321__call__4359492479211543129__callbacks'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:405:in `__run_callback'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/activesupport-3.2.13/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/railties-3.2.13/lib/rails/rack/logger.rb:32:in `call_app'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/railties-3.2.13/lib/rails/rack/logger.rb:16:in `block in call'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/activesupport-3.2.13/lib/active_support/tagged_logging.rb:22:in `tagged'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/railties-3.2.13/lib/rails/rack/logger.rb:16:in `call'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/activesupport-3.2.13/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/rack-1.4.5/lib/rack/lock.rb:15:in `call'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_dispatch/middleware/static.rb:63:in `call'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/railties-3.2.13/lib/rails/engine.rb:479:in `call'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/railties-3.2.13/lib/rails/application.rb:223:in `call'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/rack-1.4.5/lib/rack/content_length.rb:14:in `call'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/railties-3.2.13/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/rack-1.4.5/lib/rack/handler/webrick.rb:59:in `service'
+/Users/Lucy/.rvm/rubies/ruby-1.9.3-p429/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+/Users/Lucy/.rvm/rubies/ruby-1.9.3-p429/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+/Users/Lucy/.rvm/rubies/ruby-1.9.3-p429/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+  Rendered posts/show.html.erb within layouts/application (6.1ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (/Users/Lucy/Documents/code/quick_blog/app/views/posts/show.html.erb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+...( link_to 'Edit' edit_post_path(@post) );@output_buffer.safe...
+...                               ^):
+    4:   <%= link_to_unless_current @post.title, @post %>
+    5: </h2>
+    6: 
+    7: <%= link_to 'Edit' edit_post_path(@post) %> | <%= link_to 'Back', posts_path %>
+  app/controllers/posts_controller.rb:18:in `show'
+
+
+  Rendered /Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.3ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2013-05-27 20:13:03 +1000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered posts/show.html.erb within layouts/application (26.2ms)
+Completed 200 OK in 44ms (Views: 42.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2013-05-27 20:13:03 +1000
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-27 20:13:03 +1000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-05-27 20:13:03 +1000
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-27 20:13:03 +1000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-27 20:13:03 +1000
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-27 20:13:03 +1000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-27 20:13:03 +1000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2013-05-27 20:15:44 +1000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered posts/_post.html.erb (0.9ms)
+  Rendered posts/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 20ms (Views: 18.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-27 20:15:44 +1000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-27 20:15:44 +1000
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2013-05-27 20:15:44 +1000
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-27 20:15:44 +1000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-05-27 20:15:44 +1000
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-27 20:15:44 +1000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-27 20:15:44 +1000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2013-05-27 20:20:21 +1000
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" 
+  Rendered posts/_post.html.erb (1.6ms)
+  Rendered posts/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 25ms (Views: 18.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-27 20:20:21 +1000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2013-05-27 20:20:21 +1000
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-27 20:20:21 +1000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-27 20:20:21 +1000
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-27 20:20:21 +1000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-05-27 20:20:21 +1000
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-27 20:20:21 +1000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2013-05-27 20:20:24 +1000
+Processing by PostsController#new as HTML
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2013-05-27 20:20:39 +1000
+Processing by PostsController#new as HTML
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2013-05-27 20:20:43 +1000
+Processing by PostsController#new as HTML
+  Rendered posts/_form.html.erb (2.6ms)
+  Rendered posts/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 41ms (Views: 40.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-27 20:20:43 +1000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-27 20:20:43 +1000
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2013-05-27 20:20:43 +1000
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-27 20:20:43 +1000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-27 20:20:43 +1000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-05-27 20:20:43 +1000
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-27 20:20:43 +1000
+Served asset /application.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (1.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreatePosts (20130527100802)
+Migrating to CreateComments (20130527102126)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "post_id" integer, "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mCREATE INDEX "index_comments_on_post_id" ON "comments" ("post_id")[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130527102126')
+  [1m[36m (2.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/posts" for 127.0.0.1 at 2013-05-27 20:25:36 +1000
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" [0m
+  Rendered posts/_post.html.erb (20.3ms)
+  Rendered posts/index.html.erb within layouts/application (25.6ms)
+Compiled comments.css  (5ms)  (pid 12159)
+Compiled application.css  (12ms)  (pid 12159)
+Compiled comments.js  (84ms)  (pid 12159)
+Compiled application.js  (95ms)  (pid 12159)
+Completed 200 OK in 238ms (Views: 216.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-27 20:25:36 +1000
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-05-27 20:25:37 +1000
+Served asset /comments.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-27 20:25:37 +1000
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-27 20:25:37 +1000
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-27 20:25:37 +1000
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2013-05-27 20:25:37 +1000
+Served asset /posts.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2013-05-27 20:25:37 +1000
+Served asset /comments.js - 200 OK (1ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-05-27 20:25:37 +1000
+Served asset /posts.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-27 20:25:37 +1000
+Served asset /application.js - 304 Not Modified (6ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2013-05-27 20:25:38 +1000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered posts/_post.html.erb (1.1ms)
+  Rendered posts/show.html.erb within layouts/application (8.2ms)
+Completed 500 Internal Server Error in 12ms
+
+ActionView::Template::Error (undefined method `comments' for #<Post:0x007fec5cff0730>):
+    6: 
+    7: <h2>Comments</h2>
+    8:   <div id="comments">
+    9:          <%= render :partial => @post.comments %>
+    10:   </div>
+    11: 
+    12: <%= form_for [@post, Comment.new] do |f| %>
+  app/views/posts/show.html.erb:9:in `_app_views_posts_show_html_erb__3890864423402885932_70326579166440'
+  app/controllers/posts_controller.rb:19:in `show'
+
+
+  Rendered /Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.2ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2013-05-27 20:26:05 +1000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered posts/_post.html.erb (1.1ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 1
+  Rendered collection (0.0ms)
+  Rendered posts/show.html.erb within layouts/application (31.0ms)
+Completed 200 OK in 79ms (Views: 71.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-27 20:26:05 +1000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-05-27 20:26:05 +1000
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-27 20:26:05 +1000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-27 20:26:05 +1000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-27 20:26:05 +1000
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2013-05-27 20:26:05 +1000
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2013-05-27 20:26:05 +1000
+Served asset /comments.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-05-27 20:26:05 +1000
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-27 20:26:05 +1000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/posts/1/comments" for 127.0.0.1 at 2013-05-27 20:26:16 +1000
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wEpo/FKB/iuODypPdN8WLfWV0C0Vbfefs15krAq5Yg4=", "comment"=>{"body"=>"yeah it is - so awesome"}, "commit"=>"Add comment", "post_id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (4.2ms)[0m  [1mINSERT INTO "comments" ("body", "created_at", "post_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "yeah it is - so awesome"], ["created_at", Mon, 27 May 2013 10:26:16 UTC +00:00], ["post_id", 1], ["updated_at", Mon, 27 May 2013 10:26:16 UTC +00:00]]
+  [1m[35m (2.3ms)[0m  commit transaction
+Redirected to http://127.0.0.1:3000/posts/1
+Completed 302 Found in 12ms (ActiveRecord: 6.7ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2013-05-27 20:26:16 +1000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered posts/_post.html.erb (0.5ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 1
+  Rendered comments/_comment.html.erb (4.6ms)
+  Rendered posts/show.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 54ms (Views: 53.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-27 20:26:16 +1000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2013-05-27 20:26:16 +1000
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-05-27 20:26:16 +1000
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-27 20:26:16 +1000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-27 20:26:16 +1000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-27 20:26:16 +1000
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2013-05-27 20:26:16 +1000
+Served asset /comments.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-05-27 20:26:16 +1000
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-27 20:26:16 +1000
+Served asset /application.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-28 19:42:19 +1000
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" [0m
+  Rendered posts/_post.html.erb (11.8ms)
+  Rendered posts/index.html.erb within layouts/application (21.7ms)
+Completed 200 OK in 194ms (Views: 131.1ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-28 19:42:19 +1000
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" 
+  Rendered posts/_post.html.erb (0.8ms)
+  Rendered posts/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 39ms (Views: 37.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-28 19:42:19 +1000
+Served asset /application.css - 200 OK (12ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-05-28 19:42:19 +1000
+Served asset /comments.css - 200 OK (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 19:42:19 +1000
+Served asset /jquery_ujs.js - 200 OK (4ms)
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2013-05-28 19:42:19 +1000
+Served asset /comments.js - 200 OK (2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-05-28 19:42:19 +1000
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-28 19:42:19 +1000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-28 19:42:19 +1000
+Served asset /jquery.js - 200 OK (4ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2013-05-28 19:42:19 +1000
+Served asset /posts.css - 200 OK (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-28 19:42:19 +1000
+Served asset /scaffolds.css - 200 OK (1ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-05-28 19:42:19 +1000
+Served asset /posts.js - 200 OK (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-28 19:42:19 +1000
+Served asset /application.js - 200 OK (12ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 19:42:19 +1000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2013-05-28 19:42:19 +1000
+Served asset /comments.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-28 19:42:19 +1000
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2013-05-28 19:42:19 +1000
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-28 19:42:19 +1000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-05-28 19:42:19 +1000
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-28 19:42:19 +1000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2013-05-28 19:47:04 +1000
+Processing by PostsController#new as HTML
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2013-05-28 19:47:09 +1000
+Processing by PostsController#new as HTML
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2013-05-28 19:47:22 +1000
+Processing by PostsController#new as HTML
+  Rendered posts/_form.html.erb (11.5ms)
+  Rendered posts/new.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 82ms (Views: 74.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-28 19:47:23 +1000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2013-05-28 19:47:23 +1000
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 19:47:23 +1000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-28 19:47:23 +1000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-05-28 19:47:23 +1000
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-28 19:47:23 +1000
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-05-28 19:47:23 +1000
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2013-05-28 19:47:23 +1000
+Served asset /comments.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-28 19:47:23 +1000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2013-05-28 19:47:39 +1000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SmUBbDnqGr4z2Kcg1M/Hs2RmUMNM4NhpssGQ6d4zyNU=", "post"=>{"title"=>"ajaxy", "body"=>"trying to submit with AJAX"}, "commit"=>"Create Post"}
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2013-05-28 19:47:39 +1000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SmUBbDnqGr4z2Kcg1M/Hs2RmUMNM4NhpssGQ6d4zyNU=", "post"=>{"title"=>"ajaxy", "body"=>"trying to submit with AJAX"}, "commit"=>"Create Post"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (11.9ms)[0m  INSERT INTO "posts" ("body", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["body", "trying to submit with AJAX"], ["created_at", Tue, 28 May 2013 09:47:39 UTC +00:00], ["title", "ajaxy"], ["updated_at", Tue, 28 May 2013 09:47:39 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/posts/2
+Completed 302 Found in 18ms (ActiveRecord: 12.7ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2013-05-28 19:47:39 +1000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", "2"]]
+  Rendered posts/_post.html.erb (1.2ms)
+  [1m[36mComment Load (0.5ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 2[0m
+  Rendered collection (0.0ms)
+  Rendered posts/show.html.erb within layouts/application (65.3ms)
+Completed 200 OK in 105ms (Views: 101.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-28 19:47:40 +1000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-05-28 19:47:40 +1000
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2013-05-28 19:47:40 +1000
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-28 19:47:40 +1000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 19:47:40 +1000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-28 19:47:40 +1000
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-05-28 19:47:40 +1000
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2013-05-28 19:47:40 +1000
+Served asset /comments.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-28 19:47:40 +1000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/posts/2/comments" for 127.0.0.1 at 2013-05-28 19:48:42 +1000
+Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SmUBbDnqGr4z2Kcg1M/Hs2RmUMNM4NhpssGQ6d4zyNU=", "comment"=>{"body"=>"here's an awesome comment!"}, "commit"=>"Add comment", "post_id"=>"2"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", "2"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "comments" ("body", "created_at", "post_id", "updated_at") VALUES (?, ?, ?, ?)  [["body", "here's an awesome comment!"], ["created_at", Tue, 28 May 2013 09:48:42 UTC +00:00], ["post_id", 2], ["updated_at", Tue, 28 May 2013 09:48:42 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/posts/2
+Completed 302 Found in 7ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2013-05-28 19:48:42 +1000
+Processing by PostsController#show as JS
+  Parameters: {"id"=>"2"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", "2"]]
+  Rendered posts/_post.html.erb (0.6ms)
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 2[0m
+  Rendered comments/_comment.html.erb (1.4ms)
+  Rendered posts/show.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 66ms (Views: 64.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2013-05-28 19:50:34 +1000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", "2"]]
+  Rendered posts/_post.html.erb (1.2ms)
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 2[0m
+  Rendered comments/_comment.html.erb (1.6ms)
+  Rendered posts/show.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 88ms (Views: 76.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-28 19:50:34 +1000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-28 19:50:34 +1000
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-05-28 19:50:34 +1000
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2013-05-28 19:50:34 +1000
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-28 19:50:34 +1000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 19:50:34 +1000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-05-28 19:50:34 +1000
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2013-05-28 19:50:34 +1000
+Served asset /comments.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-28 19:50:34 +1000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/posts/2/comments" for 127.0.0.1 at 2013-05-28 19:50:40 +1000
+Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SmUBbDnqGr4z2Kcg1M/Hs2RmUMNM4NhpssGQ6d4zyNU=", "comment"=>{"body"=>"with AJAX!"}, "commit"=>"Add comment", "post_id"=>"2"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", "2"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "comments" ("body", "created_at", "post_id", "updated_at") VALUES (?, ?, ?, ?)  [["body", "with AJAX!"], ["created_at", Tue, 28 May 2013 09:50:40 UTC +00:00], ["post_id", 2], ["updated_at", Tue, 28 May 2013 09:50:40 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  Rendered comments/_comment.html.erb (1.0ms)
+  Rendered comments/create.js.erb (2.7ms)
+Completed 200 OK in 12ms (Views: 5.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/posts.json" for 127.0.0.1 at 2013-05-28 19:52:09 +1000
+Processing by PostsController#index as JSON
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" 
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts.atom" for 127.0.0.1 at 2013-05-28 19:52:33 +1000
+Processing by PostsController#index as ATOM
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" [0m
+Completed 500 Internal Server Error in 38ms
+
+ActionView::MissingTemplate (Missing template posts/index, application/index with {:locale=>[:en], :formats=>[:atom], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/Users/Lucy/Documents/code/quick_blog/app/views"
+):
+  app/controllers/posts_controller.rb:8:in `index'
+
+
+  Rendered /Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.5ms)
+
+
+Started GET "/posts.atom" for 127.0.0.1 at 2013-05-28 19:52:43 +1000
+Processing by PostsController#index as ATOM
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" 
+Completed 406 Not Acceptable in 7ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/posts.atom" for 127.0.0.1 at 2013-05-28 19:54:16 +1000
+Processing by PostsController#index as ATOM
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" [0m
+  Rendered posts/index.atom.builder (20.4ms)
+Completed 200 OK in 34ms (Views: 23.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-28 19:55:13 +1000
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" 
+  Rendered posts/_post.html.erb (21.1ms)
+  Rendered posts/index.html.erb within layouts/application (22.4ms)
+Completed 200 OK in 57ms (Views: 56.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-05-28 19:55:13 +1000
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-28 19:55:13 +1000
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-28 19:55:13 +1000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2013-05-28 19:55:13 +1000
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 19:55:13 +1000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-28 19:55:13 +1000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2013-05-28 19:55:13 +1000
+Served asset /comments.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-05-28 19:55:13 +1000
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-28 19:55:13 +1000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-28 19:56:28 +1000
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" [0m
+  Rendered posts/_post.html.erb (1.7ms)
+  Rendered posts/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 59ms (Views: 57.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-05-28 19:56:28 +1000
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-28 19:56:28 +1000
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2013-05-28 19:56:28 +1000
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-28 19:56:28 +1000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 19:56:28 +1000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-28 19:56:28 +1000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-05-28 19:56:28 +1000
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2013-05-28 19:56:28 +1000
+Served asset /comments.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-28 19:56:28 +1000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/posts.atom" for 127.0.0.1 at 2013-05-28 19:56:31 +1000
+Processing by PostsController#index as ATOM
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" 
+  Rendered posts/index.atom.builder (5.5ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.2ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-28 20:05:25 +1000
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" [0m
+  Rendered posts/_post.html.erb (12.0ms)
+  Rendered posts/index.html.erb within layouts/application (17.5ms)
+Compiled foundation_and_overrides.css  (2860ms)  (pid 2923)
+Compiled application.css  (2873ms)  (pid 2923)
+Compiled vendor/custom.modernizr.js  (0ms)  (pid 2923)
+Compiled foundation/foundation.js  (0ms)  (pid 2923)
+Compiled foundation/foundation.alerts.js  (0ms)  (pid 2923)
+Compiled foundation/foundation.clearing.js  (0ms)  (pid 2923)
+Compiled foundation/foundation.cookie.js  (0ms)  (pid 2923)
+Compiled foundation/foundation.dropdown.js  (0ms)  (pid 2923)
+Compiled foundation/foundation.forms.js  (0ms)  (pid 2923)
+Compiled foundation/foundation.joyride.js  (0ms)  (pid 2923)
+Compiled foundation/foundation.magellan.js  (0ms)  (pid 2923)
+Compiled foundation/foundation.orbit.js  (0ms)  (pid 2923)
+Compiled foundation/foundation.placeholder.js  (0ms)  (pid 2923)
+Compiled foundation/foundation.reveal.js  (0ms)  (pid 2923)
+Compiled foundation/foundation.section.js  (0ms)  (pid 2923)
+Compiled foundation/foundation.tooltips.js  (0ms)  (pid 2923)
+Compiled foundation/foundation.topbar.js  (0ms)  (pid 2923)
+Compiled foundation/index.js  (230ms)  (pid 2923)
+Compiled application.js  (248ms)  (pid 2923)
+Completed 200 OK in 3357ms (Views: 3333.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-28 20:05:28 +1000
+Served asset /application.css - 200 OK (19ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-28 20:05:28 +1000
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 20:05:28 +1000
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/vendor/custom.modernizr.js?body=1" for 127.0.0.1 at 2013-05-28 20:05:28 +1000
+Served asset /vendor/custom.modernizr.js - 200 OK (25ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-05-28 20:05:28 +1000
+Served asset /comments.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2013-05-28 20:05:28 +1000
+Served asset /posts.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2013-05-28 20:05:28 +1000
+Served asset /foundation_and_overrides.css - 200 OK (11ms)
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2013-05-28 20:05:28 +1000
+Served asset /foundation/foundation.js - 200 OK (2ms)
+
+
+Started GET "/assets/foundation/foundation.alerts.js?body=1" for 127.0.0.1 at 2013-05-28 20:05:28 +1000
+Served asset /foundation/foundation.alerts.js - 200 OK (3ms)
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2013-05-28 20:05:28 +1000
+Served asset /foundation/foundation.clearing.js - 200 OK (4ms)
+
+
+Started GET "/assets/foundation/foundation.cookie.js?body=1" for 127.0.0.1 at 2013-05-28 20:05:28 +1000
+Served asset /foundation/foundation.cookie.js - 200 OK (4ms)
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2013-05-28 20:05:28 +1000
+Served asset /foundation/foundation.dropdown.js - 200 OK (9ms)
+
+
+Started GET "/assets/foundation/foundation.forms.js?body=1" for 127.0.0.1 at 2013-05-28 20:05:28 +1000
+Served asset /foundation/foundation.forms.js - 200 OK (6ms)
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2013-05-28 20:05:28 +1000
+Served asset /foundation/foundation.joyride.js - 200 OK (3ms)
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2013-05-28 20:05:28 +1000
+Served asset /foundation/foundation.magellan.js - 200 OK (4ms)
+
+
+Started GET "/assets/foundation/foundation.placeholder.js?body=1" for 127.0.0.1 at 2013-05-28 20:05:28 +1000
+Served asset /foundation/foundation.placeholder.js - 200 OK (4ms)
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2013-05-28 20:05:28 +1000
+Served asset /foundation/foundation.orbit.js - 200 OK (3ms)
+
+
+Started GET "/assets/foundation/index.js?body=1" for 127.0.0.1 at 2013-05-28 20:05:28 +1000
+Served asset /foundation/index.js - 200 OK (23ms)
+
+
+Started GET "/assets/foundation/foundation.section.js?body=1" for 127.0.0.1 at 2013-05-28 20:05:28 +1000
+Served asset /foundation/foundation.section.js - 200 OK (4ms)
+
+
+Started GET "/assets/foundation/foundation.tooltips.js?body=1" for 127.0.0.1 at 2013-05-28 20:05:28 +1000
+Served asset /foundation/foundation.tooltips.js - 200 OK (4ms)
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2013-05-28 20:05:28 +1000
+Served asset /foundation/foundation.topbar.js - 200 OK (4ms)
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2013-05-28 20:05:28 +1000
+Served asset /foundation/foundation.reveal.js - 200 OK (6ms)
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2013-05-28 20:05:28 +1000
+Served asset /comments.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-28 20:05:28 +1000
+Served asset /application.js - 200 OK (21ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-05-28 20:05:28 +1000
+Served asset /posts.js - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-28 20:12:17 +1000
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" 
+  Rendered posts/_post.html.erb (1.6ms)
+  Rendered posts/index.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 50ms
+
+ActionView::Template::Error (Invalid CSS after "@": expected identifier, was " import 'common';"
+  (in /Users/Lucy/Documents/code/quick_blog/app/assets/stylesheets/foundation_and_overrides.scss)):
+    15: 
+    16:   	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    17: 
+    18:   	<%= stylesheet_link_tag    "application", :media => "all" %>
+    19:   	<%= javascript_include_tag "application" %>
+    20:     <%= csrf_meta_tags %>
+    21:     <%= auto_discovery_link_tag(:atom, posts_path(:atom)) %>
+  app/assets/stylesheets/foundation_and_overrides.scss:1013
+  app/views/layouts/application.html.erb:18:in `_app_views_layouts_application_html_erb__2950913755081927892_70269953688820'
+  app/controllers/posts_controller.rb:8:in `index'
+
+
+  Rendered /Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-28 20:12:30 +1000
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" [0m
+  Rendered posts/_post.html.erb (1.2ms)
+  Rendered posts/index.html.erb within layouts/application (1.9ms)
+Compiled foundation_and_overrides.css  (1472ms)  (pid 2923)
+Completed 500 Internal Server Error in 1537ms
+
+ActionView::Template::Error (Undefined mixin 'button'.
+  (in /Users/Lucy/Documents/code/quick_blog/app/assets/stylesheets/common.css.scss)):
+    15: 
+    16:   	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    17: 
+    18:   	<%= stylesheet_link_tag    "application", :media => "all" %>
+    19:   	<%= javascript_include_tag "application" %>
+    20:     <%= csrf_meta_tags %>
+    21:     <%= auto_discovery_link_tag(:atom, posts_path(:atom)) %>
+  app/assets/stylesheets/common.css.scss:2:in `button'
+  app/assets/stylesheets/common.css.scss:2
+  app/views/layouts/application.html.erb:18:in `_app_views_layouts_application_html_erb__2950913755081927892_70269953688820'
+  app/controllers/posts_controller.rb:8:in `index'
+
+
+  Rendered /Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.8ms)
+  Rendered /Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (14.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-28 20:13:26 +1000
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" 
+  Rendered posts/_post.html.erb (2.1ms)
+  Rendered posts/index.html.erb within layouts/application (3.5ms)
+Completed 500 Internal Server Error in 30ms
+
+ActionView::Template::Error (Undefined mixin 'button'.
+  (in /Users/Lucy/Documents/code/quick_blog/app/assets/stylesheets/common.css.scss)):
+    15: 
+    16:   	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    17: 
+    18:   	<%= stylesheet_link_tag    "application", :media => "all" %>
+    19:   	<%= javascript_include_tag "application" %>
+    20:     <%= csrf_meta_tags %>
+    21:     <%= auto_discovery_link_tag(:atom, posts_path(:atom)) %>
+  app/assets/stylesheets/common.css.scss:2:in `button'
+  app/assets/stylesheets/common.css.scss:2
+  app/views/layouts/application.html.erb:18:in `_app_views_layouts_application_html_erb__2950913755081927892_70269953688820'
+  app/controllers/posts_controller.rb:8:in `index'
+
+
+  Rendered /Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.8ms)
+  Rendered /Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-28 20:13:58 +1000
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" [0m
+  Rendered posts/_post.html.erb (1.4ms)
+  Rendered posts/index.html.erb within layouts/application (2.2ms)
+Compiled application.css  (1ms)  (pid 2923)
+Completed 200 OK in 128ms (Views: 125.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-28 20:13:58 +1000
+Served asset /application.css - 200 OK (19ms)
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2013-05-28 20:13:58 +1000
+Served asset /foundation_and_overrides.css - 200 OK (8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 20:13:58 +1000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-28 20:13:58 +1000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.cookie.js?body=1" for 127.0.0.1 at 2013-05-28 20:13:58 +1000
+Served asset /foundation/foundation.cookie.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2013-05-28 20:13:58 +1000
+Served asset /foundation/foundation.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2013-05-28 20:13:58 +1000
+Served asset /foundation/foundation.clearing.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.alerts.js?body=1" for 127.0.0.1 at 2013-05-28 20:13:58 +1000
+Served asset /foundation/foundation.alerts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2013-05-28 20:13:58 +1000
+Served asset /foundation/foundation.dropdown.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.forms.js?body=1" for 127.0.0.1 at 2013-05-28 20:13:58 +1000
+Served asset /foundation/foundation.forms.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2013-05-28 20:13:58 +1000
+Served asset /foundation/foundation.joyride.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2013-05-28 20:13:58 +1000
+Served asset /foundation/foundation.magellan.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2013-05-28 20:13:58 +1000
+Served asset /foundation/foundation.orbit.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.placeholder.js?body=1" for 127.0.0.1 at 2013-05-28 20:13:58 +1000
+Served asset /foundation/foundation.placeholder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2013-05-28 20:13:58 +1000
+Served asset /foundation/foundation.reveal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.section.js?body=1" for 127.0.0.1 at 2013-05-28 20:13:58 +1000
+Served asset /foundation/foundation.section.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2013-05-28 20:13:58 +1000
+Served asset /foundation/foundation.topbar.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/index.js?body=1" for 127.0.0.1 at 2013-05-28 20:13:58 +1000
+Served asset /foundation/index.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.tooltips.js?body=1" for 127.0.0.1 at 2013-05-28 20:13:58 +1000
+Served asset /foundation/foundation.tooltips.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2013-05-28 20:13:58 +1000
+Served asset /comments.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-05-28 20:13:58 +1000
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-28 20:13:58 +1000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-28 20:17:56 +1000
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" 
+  Rendered posts/_post.html.erb (1.1ms)
+  Rendered posts/index.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 50ms (Views: 48.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2013-05-28 20:17:56 +1000
+Served asset /foundation_and_overrides.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 20:17:56 +1000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2013-05-28 20:17:56 +1000
+Served asset /foundation/foundation.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-28 20:17:56 +1000
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-28 20:17:57 +1000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.alerts.js?body=1" for 127.0.0.1 at 2013-05-28 20:17:57 +1000
+Served asset /foundation/foundation.alerts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2013-05-28 20:17:57 +1000
+Served asset /foundation/foundation.clearing.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.cookie.js?body=1" for 127.0.0.1 at 2013-05-28 20:17:57 +1000
+Served asset /foundation/foundation.cookie.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.forms.js?body=1" for 127.0.0.1 at 2013-05-28 20:17:57 +1000
+Served asset /foundation/foundation.forms.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2013-05-28 20:17:57 +1000
+Served asset /foundation/foundation.joyride.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2013-05-28 20:17:57 +1000
+Served asset /foundation/foundation.dropdown.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2013-05-28 20:17:57 +1000
+Served asset /foundation/foundation.orbit.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2013-05-28 20:17:57 +1000
+Served asset /foundation/foundation.magellan.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.placeholder.js?body=1" for 127.0.0.1 at 2013-05-28 20:17:57 +1000
+Served asset /foundation/foundation.placeholder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2013-05-28 20:17:57 +1000
+Served asset /foundation/foundation.reveal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.section.js?body=1" for 127.0.0.1 at 2013-05-28 20:17:57 +1000
+Served asset /foundation/foundation.section.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.tooltips.js?body=1" for 127.0.0.1 at 2013-05-28 20:17:57 +1000
+Served asset /foundation/foundation.tooltips.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2013-05-28 20:17:57 +1000
+Served asset /foundation/foundation.topbar.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/index.js?body=1" for 127.0.0.1 at 2013-05-28 20:17:57 +1000
+Served asset /foundation/index.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-05-28 20:17:57 +1000
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2013-05-28 20:17:57 +1000
+Served asset /comments.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-28 20:17:57 +1000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-28 20:20:57 +1000
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" [0m
+  Rendered posts/_post.html.erb (1.5ms)
+  Rendered posts/index.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 74ms (Views: 73.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-28 20:20:57 +1000
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2013-05-28 20:20:57 +1000
+Served asset /foundation/foundation.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2013-05-28 20:20:57 +1000
+Served asset /foundation_and_overrides.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-28 20:20:58 +1000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.alerts.js?body=1" for 127.0.0.1 at 2013-05-28 20:20:58 +1000
+Served asset /foundation/foundation.alerts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.cookie.js?body=1" for 127.0.0.1 at 2013-05-28 20:20:58 +1000
+Served asset /foundation/foundation.cookie.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2013-05-28 20:20:58 +1000
+Served asset /foundation/foundation.dropdown.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 20:20:58 +1000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2013-05-28 20:20:58 +1000
+Served asset /foundation/foundation.clearing.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.forms.js?body=1" for 127.0.0.1 at 2013-05-28 20:20:58 +1000
+Served asset /foundation/foundation.forms.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2013-05-28 20:20:58 +1000
+Served asset /foundation/foundation.joyride.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2013-05-28 20:20:58 +1000
+Served asset /foundation/foundation.magellan.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2013-05-28 20:20:58 +1000
+Served asset /foundation/foundation.orbit.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2013-05-28 20:20:58 +1000
+Served asset /foundation/foundation.reveal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.placeholder.js?body=1" for 127.0.0.1 at 2013-05-28 20:20:58 +1000
+Served asset /foundation/foundation.placeholder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.section.js?body=1" for 127.0.0.1 at 2013-05-28 20:20:58 +1000
+Served asset /foundation/foundation.section.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.tooltips.js?body=1" for 127.0.0.1 at 2013-05-28 20:20:58 +1000
+Served asset /foundation/foundation.tooltips.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2013-05-28 20:20:58 +1000
+Served asset /foundation/foundation.topbar.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/index.js?body=1" for 127.0.0.1 at 2013-05-28 20:20:58 +1000
+Served asset /foundation/index.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2013-05-28 20:20:58 +1000
+Served asset /comments.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-05-28 20:20:58 +1000
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-28 20:20:58 +1000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2013-05-28 20:21:00 +1000
+
+ActionController::RoutingError (No route matches [GET] "/about"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Lucy/.rvm/rubies/ruby-1.9.3-p429/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Lucy/.rvm/rubies/ruby-1.9.3-p429/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Lucy/.rvm/rubies/ruby-1.9.3-p429/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Lucy/.rvm/gems/ruby-1.9.3-p429@installfest/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-28 20:21:20 +1000
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" 
+  Rendered posts/_post.html.erb (1.7ms)
+  Rendered posts/index.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 72ms (Views: 70.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-28 20:21:20 +1000
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:20 +1000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.alerts.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:20 +1000
+Served asset /foundation/foundation.alerts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:20 +1000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:20 +1000
+Served asset /foundation/foundation.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:20 +1000
+Served asset /foundation/foundation.clearing.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2013-05-28 20:21:20 +1000
+Served asset /foundation_and_overrides.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/foundation/foundation.cookie.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:20 +1000
+Served asset /foundation/foundation.cookie.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:20 +1000
+Served asset /foundation/foundation.dropdown.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.forms.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:20 +1000
+Served asset /foundation/foundation.forms.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:20 +1000
+Served asset /foundation/foundation.joyride.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:20 +1000
+Served asset /foundation/foundation.magellan.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:20 +1000
+Served asset /foundation/foundation.orbit.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.placeholder.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:20 +1000
+Served asset /foundation/foundation.placeholder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:20 +1000
+Served asset /foundation/foundation.reveal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.section.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:20 +1000
+Served asset /foundation/foundation.section.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.tooltips.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:20 +1000
+Served asset /foundation/foundation.tooltips.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:20 +1000
+Served asset /foundation/foundation.topbar.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/index.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:20 +1000
+Served asset /foundation/index.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:20 +1000
+Served asset /comments.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:20 +1000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:20 +1000
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-28 20:21:36 +1000
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" [0m
+  Rendered posts/_post.html.erb (1.4ms)
+  Rendered posts/index.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 77ms (Views: 75.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2013-05-28 20:21:36 +1000
+Served asset /foundation_and_overrides.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-28 20:21:36 +1000
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:36 +1000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:36 +1000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:36 +1000
+Served asset /foundation/foundation.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.alerts.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:36 +1000
+Served asset /foundation/foundation.alerts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:36 +1000
+Served asset /foundation/foundation.clearing.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.cookie.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:36 +1000
+Served asset /foundation/foundation.cookie.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:36 +1000
+Served asset /foundation/foundation.dropdown.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.forms.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:36 +1000
+Served asset /foundation/foundation.forms.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:36 +1000
+Served asset /foundation/foundation.magellan.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:36 +1000
+Served asset /foundation/foundation.joyride.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:36 +1000
+Served asset /foundation/foundation.orbit.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.placeholder.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:36 +1000
+Served asset /foundation/foundation.placeholder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.section.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:36 +1000
+Served asset /foundation/foundation.section.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.tooltips.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:36 +1000
+Served asset /foundation/foundation.tooltips.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:36 +1000
+Served asset /foundation/foundation.topbar.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:36 +1000
+Served asset /foundation/foundation.reveal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:36 +1000
+Served asset /comments.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/index.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:36 +1000
+Served asset /foundation/index.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:36 +1000
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:36 +1000
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-28 20:21:45 +1000
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" 
+  Rendered posts/_post.html.erb (1.2ms)
+  Rendered posts/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 99ms (Views: 97.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2013-05-28 20:21:46 +1000
+Served asset /foundation_and_overrides.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-28 20:21:46 +1000
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:46 +1000
+Served asset /foundation/foundation.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:46 +1000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:46 +1000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.alerts.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:46 +1000
+Served asset /foundation/foundation.alerts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.cookie.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:46 +1000
+Served asset /foundation/foundation.cookie.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:46 +1000
+Served asset /foundation/foundation.clearing.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:46 +1000
+Served asset /foundation/foundation.dropdown.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.forms.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:46 +1000
+Served asset /foundation/foundation.forms.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:46 +1000
+Served asset /foundation/foundation.joyride.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:46 +1000
+Served asset /foundation/foundation.magellan.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:46 +1000
+Served asset /foundation/foundation.orbit.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.placeholder.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:46 +1000
+Served asset /foundation/foundation.placeholder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:46 +1000
+Served asset /foundation/foundation.reveal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.tooltips.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:46 +1000
+Served asset /foundation/foundation.tooltips.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:46 +1000
+Served asset /foundation/foundation.topbar.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.section.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:46 +1000
+Served asset /foundation/foundation.section.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:46 +1000
+Served asset /comments.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:46 +1000
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/index.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:46 +1000
+Served asset /foundation/index.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-28 20:21:46 +1000
+Served asset /application.js - 304 Not Modified (0ms)
