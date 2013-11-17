@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
+gem 'haml', '>= 3.0.0'
+gem 'haml-rails'
+gem 'bluecloth' # To support markdown in HAML
 
 group :development, :test do
   gem 'sqlite3'
