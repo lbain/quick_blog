@@ -1,2 +1,4 @@
-%h2= link_to_unless_current post.title, post
-= simple_format post.body
+.post
+  %h2= link_to_unless_current post.title, post
+  .published Published #{time_ago_in_words(post.created_at)} ago
+  = simple_format post.body
